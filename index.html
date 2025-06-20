@@ -1,1 +1,91 @@
-"Hello World" 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1 id="textoScroll" class="visible container">Bienvenido a mi web personal</h1>
+    </header>
+    <main>
+        <div id="contenidoScroll" class="visible container">
+            <div class="box">
+                <h4>Sobre mí</h4>
+                <p>Soy Hugo Ruiz, desarrollador web full stack, apasionado por la informática y siempre en busca de
+                    nuevos
+                    aprendizajes. Disfruto trabajar en proyectos donde puedo aportar ideas, aprender y crecer junto al
+                    equipo. Además, me considero una persona colaborativa, comunicativa y agradable para trabajar en
+                    grupo.
+                </p>
+            </div>
+            <div class="box">
+                <h4>Estudios</h4>
+                <p>Poseo los títulos de técnico en sistemas microinformáticos y redes, y desarrollo de aplicaciones web.
+                    Además del título de ingés intermedio - avanzado (B2), lo que me permite comunicarme eficazmente en
+                    entornos internacionales.</p>
+            </div>
+
+        </div>
+        <div class="container">
+            <h3>Mis proyectos</h3>
+            <div class="projects">
+                <div class="project">
+                    <a href="https://holidaysnow.onrender.com"><img src="img/ChatGPT Image 20 jun 2025, 21_20_13.png"
+                            alt="">
+                        <p>Proyecto final de Desarrollo de Aplicaciones Web</p>
+                    </a>
+                </div>
+                <div class="project">
+                    <a href="https://github.com/developerUser12-sudo/proyectoAngular.git"><img
+                            src="img/Angular_full_color_logo.svg.png" alt="">
+                        <p>Proyecto final de Desarrollo en Entorno Cliente</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+
+        <div class="social-links">
+            <a href="https://www.instagram.com/hugoo_rs24" target="_blank" aria-label="Instagram">
+                <img src="img/ChatGPT_Image_20_jun_2025__22_26_19-removebg-preview.png" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com/in/hugo-ruiz-santos" target="_blank" aria-label="LinkedIn">
+                <img src="img/ChatGPT_Image_20_jun_2025__22_20_06-removebg-preview.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/developerUser12-sudo" target="_blank" aria-label="GitHub">
+                <img src="img/ChatGPT_Image_20_jun_2025__22_24_06-removebg-preview.png" alt="GitHub">
+
+            </a>
+        </div>
+    </footer>
+    <script>
+        const texto = document.getElementById('textoScroll');
+        let lastScrollTop = 0;
+        let isHidden = false;
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop && !isHidden) {
+                texto.classList.remove('visible');
+                texto.classList.add('hidden');
+                isHidden = true;
+            } else if (scrollTop < lastScrollTop && isHidden) {
+                texto.classList.remove('hidden');
+                void texto.offsetWidth;
+                texto.classList.add('visible');
+                isHidden = false;
+            }
+
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+    </script>
+</body>
+
+</html>
