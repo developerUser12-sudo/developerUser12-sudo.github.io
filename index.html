@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Web personal Hugo Ruiz</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -35,13 +35,13 @@
             <h3>Mis proyectos</h3>
             <div class="projects">
                 <div class="project">
-                    <a href="https://holidaysnow.onrender.com"><img src="img/ChatGPT Image 20 jun 2025, 21_20_13.png"
+                    <a href="https://holidaysnow.onrender.com" target="_blank"><img src="img/ChatGPT Image 20 jun 2025, 21_20_13.png"
                             alt="">
                         <p>Proyecto final de Desarrollo de Aplicaciones Web</p>
                     </a>
                 </div>
                 <div class="project">
-                    <a href="https://github.com/developerUser12-sudo/proyectoAngular.git"><img
+                    <a href="https://github.com/developerUser12-sudo/proyectoAngular.git" target="_blank"><img
                             src="img/Angular_full_color_logo.svg.png" alt="">
                         <p>Proyecto final de Desarrollo en Entorno Cliente</p>
                     </a>
@@ -49,6 +49,12 @@
             </div>
         </div>
     </main>
+    <section id="curriculumScroll">
+        <div class="container box">
+            <h3>Currículum</h3>
+            <p>¿Estás interesado/a en visualizar mi currículum? Por favor, escríbeme un correo a hugoruisan8@gmail.com</p>
+        </div>
+    </section>
     <footer class="footer">
 
         <div class="social-links">
@@ -66,25 +72,41 @@
     </footer>
     <script>
         const texto = document.getElementById('textoScroll');
-        let lastScrollTop = 0;
-        let isHidden = false;
+        const contenido = document.getElementById('contenidoScroll');
+        const currículum = document.getElementById('curriculumScroll');
 
+        function isVisible(el) {
+            const rect = el.getBoundingClientRect();
+            return rect.bottom > 0 && rect.top < window.innerHeight;
+        }
         window.addEventListener('scroll', () => {
-            const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-            if (scrollTop > lastScrollTop && !isHidden) {
-                texto.classList.remove('visible');
-                texto.classList.add('hidden');
-                isHidden = true;
-            } else if (scrollTop < lastScrollTop && isHidden) {
+            if (isVisible(texto)) {
                 texto.classList.remove('hidden');
                 void texto.offsetWidth;
                 texto.classList.add('visible');
-                isHidden = false;
+            } else {
+                texto.classList.remove('visible');
+                texto.classList.add('hidden');
             }
-
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            if (isVisible(contenido)) {
+                contenido.classList.remove('hidden');
+                void contenido.offsetWidth;
+                contenido.classList.add('visible');
+            } else {
+                contenido.classList.remove('visible');
+                contenido.classList.add('hidden');
+            }
+            if (isVisible(currículum)) {
+                currículum.classList.remove('hidden');
+                void currículum.offsetWidth;
+                currículum.classList.add('visible');
+            } else {
+                currículum.classList.remove('visible');
+                currículum.classList.add('hidden');
+            }
         });
+
+
     </script>
 </body>
 
