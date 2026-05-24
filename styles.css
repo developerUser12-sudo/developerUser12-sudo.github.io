@@ -24,8 +24,13 @@ h4 {
     font-size: 2rem;
 }
 
-p {
+p,
+ul {
     font-size: 1.6rem;
+}
+
+li {
+    padding: 5px;
 }
 
 .container {
@@ -34,36 +39,8 @@ p {
     padding: 40px;
 }
 
-
-.visible {
-  animation: fadeIn 1.5s ease forwards;
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  animation: none !important;
-}
-
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
 .box {
-    border: 2px solid #66ffc2;
+    border: 1px solid #66ffc2;
     padding: 2rem;
     margin: 2rem auto;
     background-color: rgba(0, 0, 0, 0.4);
@@ -71,15 +48,16 @@ p {
 }
 
 .project {
-    
-    max-width: 300px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid #66ffc2;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 310px;
     width: 100%;
 }
 
 .project img {
     width: 100%;
-    max-width: 300px;
-    border: 2px solid #66ffc2;
     border-radius: 1rem;
 }
 
@@ -95,15 +73,17 @@ a {
     gap: 30px;
     width: 100%;
 }
-.footer{
-     background-color: rgba(0, 0, 0, 0.4);
-    
-     width: 100%;
-     margin-top: 70px;
-     padding: 50px;
-     box-sizing: border-box;
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.4);
+
+    width: 100%;
+    margin-top: 70px;
+    padding: 50px;
+    box-sizing: border-box;
 }
-.social-links{
+
+.social-links {
     max-width: 700px;
     margin: auto;
     display: flex;
@@ -111,6 +91,13 @@ a {
     gap: 20px;
     justify-content: center;
 }
-.social-links a img{
+
+.social-links a img {
     width: 70px;
+}
+
+@media screen and (max-width:650px) {
+    ul {
+        margin-left: -25px;
+    }
 }
